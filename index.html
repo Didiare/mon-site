@@ -2,8 +2,15 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Multyde | Agence de com’ audiovisuelle</title>
+  <title>Multyde | Agence de com' audiovisuelle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -16,50 +23,59 @@
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background-color: #000;
       color: #fff;
       overflow-x: hidden;
     }
 
-    /* NAVBAR */
+    h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 3rem;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
     .navbar {
-      position: sticky;
-      top: 0;
-      background: rgba(0, 0, 0, 0.85);
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
       padding: 1rem 2rem;
-      z-index: 9999;
+      background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(5px);
     }
 
-    .logo a {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #fff;
-      text-decoration: none;
+    .logo-center img {
+      height: 60px;
+      margin-bottom: 0.5rem;
     }
 
-    nav ul {
+    .menu-center ul {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       gap: 1.5rem;
+      justify-content: center;
+      padding: 0;
     }
 
-    nav a {
+    .menu-center a {
       color: #fff;
       text-decoration: none;
       font-weight: 500;
+      font-family: 'Montserrat', sans-serif;
       transition: color 0.3s;
     }
 
-    nav a:hover {
+    .menu-center a:hover {
       color: #ffcc00;
     }
 
-    /* HERO AVEC IMAGE */
     .hero {
       background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
       height: 100vh;
@@ -70,12 +86,10 @@
     }
 
     .hero h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      text-shadow: 2px 2px 5px #000;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.6);
       padding: 1rem 2rem;
       border-radius: 10px;
+      text-shadow: 2px 2px 5px #000;
     }
 
     section {
@@ -87,37 +101,13 @@
       background: #111;
     }
 
-    .about p {
-      max-width: 600px;
-      margin: 1rem auto;
-      font-size: 1.2rem;
-      line-height: 1.6;
-    }
-
     .team {
       background: #1a1a1a;
-    }
-
-    .team h2 {
-      margin-bottom: 1rem;
-      font-size: 2rem;
-    }
-
-    .team p {
-      font-size: 1.1rem;
-      color: #ccc;
-      max-width: 600px;
-      margin: auto;
     }
 
     .projects {
       background: #fff;
       color: #111;
-    }
-
-    .projects h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
     }
 
     .projects .grid {
@@ -134,21 +124,18 @@
       padding: 1rem;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: scale(1.03);
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
     .card img {
       max-width: 100%;
       border-radius: 6px;
       margin-bottom: 1rem;
-    }
-
-    .card h3 {
-      margin: 0.5rem 0;
     }
 
     footer {
@@ -161,42 +148,41 @@
   </style>
 </head>
 <body>
-
-  <!-- HEADER -->
   <header class="navbar">
-    <div class="logo">
-      <a href="#top">Multyde</a>
+    <div class="logo-center">
+      <a href="#top">
+        <img src="logo.png" alt="Logo Multyde" class="logo-img">
+      </a>
     </div>
-    <nav>
+    <nav class="menu-center">
       <ul>
+        <li><a href="#top">Accueil ▾</a></li>
         <li><a href="#projects">Projets</a></li>
-        <li><a href="#team">Équipe</a></li>
+        <li><a href="#studio">Studio ▾</a></li>
+        <li><a href="#mariages">Mariages ▾</a></li>
+        <li><a href="#merch">Merch</a></li>
+        <li><a href="#les-tips">Les Tip’s Qui Flex</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="blog.html">Blog</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section id="top" class="hero">
+  <section id="top" class="hero" data-aos="zoom-in">
     <h1>Bienvenue chez Multyde</h1>
   </section>
 
-  <!-- À PROPOS -->
-  <section class="about">
+  <section class="about" data-aos="fade-up">
     <p>Multyde, c’est une agence de communication audiovisuelle jeune, fraîche et décalée.</p>
     <p>On capture, on monte, on sublime vos idées avec de l’émotion, du rythme et un grain de folie.</p>
     <p>On est là pour bousculer les formats, pas juste les suivre 💥</p>
   </section>
 
-  <!-- ÉQUIPE -->
-  <section id="team" class="team">
+  <section id="team" class="team" data-aos="fade-up">
     <h2>L'équipe</h2>
-    <p>Chez Multyde, chaque membre a sa vibe : créa, technique ou juste perché. On bosse à fond avec le smile et des idées plein la tête. Tu vas les adorer (ou les subir 😅).</p>
+    <p>Chez Multyde, chaque membre a sa vibe : créa, technique ou juste perché. On bosse à fond avec le smile et des idées plein la tête.</p>
   </section>
 
-  <!-- PROJETS -->
-  <section id="projects" class="projects">
+  <section id="projects" class="projects" data-aos="fade-up">
     <h2>Nos derniers projets</h2>
     <div class="grid">
       <div class="card">
@@ -222,8 +208,7 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="about">
+  <section id="contact" class="about" data-aos="fade-up">
     <h2>Contact</h2>
     <p>Une idée ? Un projet ? Une envie de bosser ensemble ?</p>
     <p>Écris-nous à <a href="mailto:hello@multyde.com" style="color: #ffcc00;">hello@multyde.com</a></p>
@@ -233,5 +218,10 @@
     &copy; 2025 - Multyde. Tous droits réservés.
   </footer>
 
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
