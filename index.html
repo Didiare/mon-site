@@ -11,11 +11,52 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #000;
       color: #fff;
       overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 9999;
+      backdrop-filter: blur(5px);
+    }
+
+    .logo a {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
     }
 
     /* HERO AVEC IMAGE */
@@ -79,12 +120,6 @@
       margin-bottom: 1rem;
     }
 
-    .projects p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: auto;
-    }
-
     .projects .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -127,8 +162,23 @@
 </head>
 <body>
 
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="#top">Multyde</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#team">Équipe</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <!-- HERO -->
-  <section class="hero">
+  <section id="top" class="hero">
     <h1>Bienvenue chez Multyde</h1>
   </section>
 
@@ -140,13 +190,13 @@
   </section>
 
   <!-- ÉQUIPE -->
-  <section class="team">
+  <section id="team" class="team">
     <h2>L'équipe</h2>
     <p>Chez Multyde, chaque membre a sa vibe : créa, technique ou juste perché. On bosse à fond avec le smile et des idées plein la tête. Tu vas les adorer (ou les subir 😅).</p>
   </section>
 
   <!-- PROJETS -->
-  <section class="projects">
+  <section id="projects" class="projects">
     <h2>Nos derniers projets</h2>
     <div class="grid">
       <div class="card">
@@ -170,6 +220,13 @@
         <p>Un teaser explosif pour une marque pleine d'énergie.</p>
       </div>
     </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="about">
+    <h2>Contact</h2>
+    <p>Une idée ? Un projet ? Une envie de bosser ensemble ?</p>
+    <p>Écris-nous à <a href="mailto:hello@multyde.com" style="color: #ffcc00;">hello@multyde.com</a></p>
   </section>
 
   <footer>
