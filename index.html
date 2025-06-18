@@ -182,21 +182,32 @@
 </section>
 
   <section id="projects" class="fullscreen-section projects">
-  <h2 style="margin-bottom: 2rem;">Nos projets</h2>
-  <div style="display: flex; gap: 2rem; align-items: center; justify-content: center; flex-wrap: nowrap; overflow-x: auto; padding: 1rem;">
-    <div style="min-width: 250px; background: #222; padding: 1rem; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
-      <img src="https://via.placeholder.com/250x150" alt="Projet 1" style="width: 100%; border-radius: 8px;">
-      <p style="margin-top: 1rem; font-size: 1rem;">Titre du projet 1 - Un projet marquant</p>
-    </div>
-    <div style="min-width: 250px; background: #222; padding: 1rem; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
-      <img src="https://via.placeholder.com/250x150" alt="Projet 2" style="width: 100%; border-radius: 8px;">
-      <p style="margin-top: 1rem; font-size: 1rem;">Titre du projet 2 - Créatif et audacieux</p>
-    </div>
-    <div style="min-width: 250px; background: #222; padding: 1rem; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
-      <img src="https://via.placeholder.com/250x150" alt="Projet 3" style="width: 100%; border-radius: 8px;">
-      <p style="margin-top: 1rem; font-size: 1rem;">Titre du projet 3 - Impact visuel garanti</p>
+    <div style="position: relative; width: 100%; overflow: hidden;">
+    <div style="display: flex; gap: 2rem; animation: scrollCards 30s linear infinite; width: max-content;">
+      <div style="min-width: 250px; background: #222; padding: 1rem; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
+        <img src="https://via.placeholder.com/250x150" alt="Projet 1" style="width: 100%; border-radius: 8px;">
+        <p style="margin-top: 1rem; font-size: 1rem;">Titre du projet 1 - Un projet marquant</p>
+      </div>
+      <div style="min-width: 250px; background: #222; padding: 1rem; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
+        <img src="https://via.placeholder.com/250x150" alt="Projet 2" style="width: 100%; border-radius: 8px;">
+        <p style="margin-top: 1rem; font-size: 1rem;">Titre du projet 2 - Créatif et audacieux</p>
+      </div>
+      <div style="min-width: 250px; background: #222; padding: 1rem; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
+        <img src="https://via.placeholder.com/250x150" alt="Projet 3" style="width: 100%; border-radius: 8px;">
+        <p style="margin-top: 1rem; font-size: 1rem;">Titre du projet 3 - Impact visuel garanti</p>
+      </div>
+      <div style="min-width: 250px; background: #222; padding: 1rem; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
+        <img src="https://via.placeholder.com/250x150" alt="Projet 4" style="width: 100%; border-radius: 8px;">
+        <p style="margin-top: 1rem; font-size: 1rem;">Titre du projet 4 - Dynamisme créatif</p>
+      </div>
     </div>
   </div>
+  <style>
+    @keyframes scrollCards {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
 </section>
 
   <section id="team" class="fullscreen-section team">
