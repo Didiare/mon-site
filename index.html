@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Multyde | Agence de commmunication audiovisuelle</title>
+  <title>Multyde | Agence de com’ audiovisuelle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * {
@@ -18,56 +18,44 @@
       overflow-x: hidden;
     }
 
-    /* SECTION VIDÉO */
+    /* HERO AVEC IMAGE */
     .hero {
-      position: relative;
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
       height: 100vh;
-      overflow: hidden;
-    }
-
-    .hero video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .hero-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
 
-    .hero-content h1 {
+    .hero h1 {
       font-size: 3rem;
       font-weight: bold;
       text-shadow: 2px 2px 5px #000;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem 2rem;
+      border-radius: 10px;
     }
 
-    /* PARALLAXE */
-    .about {
-      background: #111;
+    /* SECTIONS */
+    section {
       padding: 4rem 2rem;
       text-align: center;
+    }
+
+    .about {
+      background: #111;
     }
 
     .about p {
       max-width: 600px;
-      margin: auto;
+      margin: 1rem auto;
       font-size: 1.2rem;
       line-height: 1.6;
     }
 
-    /* ÉQUIPE */
     .team {
       background: #1a1a1a;
-      padding: 4rem 2rem;
-      text-align: center;
     }
 
     .team h2 {
@@ -78,57 +66,64 @@
     .team p {
       font-size: 1.1rem;
       color: #ccc;
+      max-width: 600px;
+      margin: auto;
     }
 
-    /* PROJETS */
     .projects {
       background: #fff;
       color: #111;
-      padding: 4rem 2rem;
-      text-align: center;
     }
 
     .projects h2 {
-      margin-bottom: 1rem;
       font-size: 2rem;
+      margin-bottom: 1rem;
     }
 
     .projects p {
       font-size: 1.1rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    footer {
+      background: #000;
+      color: #777;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- SECTION VIDÉO -->
+  <!-- HERO -->
   <section class="hero">
-    <video autoplay loop muted playsinline>
-      <source src="video.mp4" type="video/mp4">
-      Ton navigateur ne supporte pas les vidéos HTML5.
-    </video>
-    <div class="hero-content">
-      <h1>Bienvenue chez Multyde</h1>
-    </div>
+    <h1>Bienvenue chez Multyde</h1>
   </section>
 
-  <!-- SECTION À PROPOS -->
+  <!-- À PROPOS -->
   <section class="about">
-    <p>Multyde, c’est une agence jeune, fraîche et créative qui bouscule les codes de la com’ audiovisuelle.</p>
-    <p>On raconte, on montre, on filme, on fait briller les idées.</p>
-    <p>On bosse sérieusement sans se prendre au sérieux. Boom 💥</p>
+    <p>Multyde, c’est une agence de communication audiovisuelle jeune, fraîche et décalée.</p>
+    <p>On capture, on monte, on sublime vos idées avec de l’émotion, du rythme et un grain de folie.</p>
+    <p>On est là pour bousculer les formats, pas juste les suivre 💥</p>
   </section>
 
-  <!-- SECTION ÉQUIPE -->
+  <!-- ÉQUIPE -->
   <section class="team">
     <h2>L'équipe</h2>
-    <p>Des cerveaux, des caméras, des vannes et du talent à revendre. Découvre qui se cache derrière Multyde !</p>
+    <p>Chez Multyde, chaque membre a sa vibe : créa, technique ou juste perché. On bosse à fond avec le smile et des idées plein la tête. Tu vas les adorer (ou les subir 😅).</p>
   </section>
 
-  <!-- SECTION PROJETS -->
+  <!-- PROJETS -->
   <section class="projects">
     <h2>Nos derniers projets</h2>
-    <p>Bientôt ici, des extraits de nos dernières réalisations qui envoient du lourd 🎥</p>
+    <p>Teasing à fond : ici bientôt, nos dernières réals, nos délires créatifs, et les coulisses de notre taf. À suivre de près ! 🎬</p>
   </section>
+
+  <footer>
+    &copy; 2025 - Multyde. Tous droits réservés.
+  </footer>
 
 </body>
 </html>
