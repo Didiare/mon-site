@@ -129,6 +129,7 @@
       height: 100%;
       z-index: 1;
       pointer-events: none;
+      object-fit: cover;
     }
 
     #accueil .overlay {
@@ -191,7 +192,11 @@
   </nav>
 
   <section id="accueil">
-    <iframe src="https://player.vimeo.com/video/886475509?background=1&autoplay=1&loop=1&muted=1" frameborder="0" allow="autoplay; fullscreen"></iframe>
+    <iframe src="https://player.vimeo.com/video/886475509?background=1&autoplay=1&loop=1&muted=1"
+  frameborder="0"
+  allow="autoplay; fullscreen"
+  style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover;">
+</iframe>
     <div class="overlay">
       <h1>Bienvenue chez Multyde</h1>
     </div>
