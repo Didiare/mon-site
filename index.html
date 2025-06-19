@@ -2,296 +2,127 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Multyde | Agence de com' audiovisuelle</title>
+  <title>Nos Projets | Multyde</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- AOS (Animate on Scroll) -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   <style>
-    * {
+    body {
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-      background-color: #000;
       font-family: 'Montserrat', sans-serif;
+      background: #000;
       color: #fff;
-    }
-
-    h1 {
-      font-family: 'Anton', sans-serif;
-      font-size: 4rem;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      font-size: 2rem;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: transparent;
-    }
-
-    .menu-toggle {
-      cursor: pointer;
-      font-size: 1.5rem;
-      color: #fff;
-    }
-
-    .menu {
-      position: fixed;
-      top: -100vh;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.95);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: top 0.4s ease;
-      z-index: 999;
-    }
-
-    .menu.active {
-      top: 0;
-    }
-
-    .menu .close-btn {
-      position: absolute;
-      top: 1rem;
-      right: 2rem;
-      font-size: 2rem;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    .menu a {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      color: #fff;
-      font-size: 1.2rem;
-      margin: 0.5rem 0;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .menu.active a {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .menu.active div:nth-of-type(1) a:nth-of-type(1) { transition-delay: 0.1s; }
-    .menu.active div:nth-of-type(1) a:nth-of-type(2) { transition-delay: 0.2s; }
-
-    .menu.active div:nth-of-type(2) a:nth-of-type(1) { transition-delay: 0.3s; }
-    .menu.active div:nth-of-type(2) a:nth-of-type(2) { transition-delay: 0.4s; }
-    .menu.active div:nth-of-type(2) a:nth-of-type(3) { transition-delay: 0.5s; }
-
-    .menu.active div:nth-of-type(3) a:nth-of-type(1) { transition-delay: 0.6s; }
-    .menu.active div:nth-of-type(3) a:nth-of-type(2) { transition-delay: 0.7s; }
-
-    .fullscreen-section {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
       padding: 2rem;
     }
-
-    .projects {
+    h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .card {
       background: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
     }
-
-    .team {
-      background: #1a1a1a;
+    .card:hover {
+      transform: scale(1.03);
     }
-
-    .studio {
-      background: #222;
-    }
-
-    .mariages {
-      background: #111;
-    }
-
-    .contact {
-      background: #1a1a1a;
-    }
-      .team a:hover div {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-    }
-      .parallax {
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-
-    .parallax-overlay {
-      position: relative;
-      z-index: 2;
-      background-color: rgba(0, 0, 0, 0.5);
+    .card img {
       width: 100%;
-      height: 100%;
+      display: block;
+    }
+    .card .content {
+      padding: 1rem;
+    }
+    .card .content h3 {
+      margin: 0 0 0.5rem;
+    }
+    .card .content p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+      .image-container {
+      position: relative;
+      overflow: hidden;
     }
 
-    .fullscreen-section.parallax::before {
-      content: "";
+    .image-container img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .overlay {
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.4);
-      z-index: 1;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
     }
 
-    .fullscreen-section.parallax > * {
-      position: relative;
-      z-index: 2;
+    .overlay h3 {
+      margin: 0;
+      color: #fff;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="menu-toggle" onclick="document.querySelector('.menu').classList.add('active')">☰</div>
-  </header>
-
-  <nav class="menu">
-    <div class="close-btn" onclick="document.querySelector('.menu').classList.remove('active')">×</div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); width: 80%; max-width: 1000px; gap: 2rem;">
-      <div>
-        <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Accueil</h3>
-        <a href="#accueil">Accueil</a>
-      </div>
-      <div>
-        <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Notre travail</h3>
-        <a href="projets.html">Projets</a><br>
-        <a href="#studio">Studio</a><br>
-        <a href="#mariages">Mariage</a>
-      </div>
-      <div>
-        <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">À propos</h3>
-        <a href="#team">Équipe</a><br>
-        <a href="#blog">Blog</a>
+  <h1>Nos Projets</h1>
+  <div class="grid">
+  <div class="card">
+    <div class="image-container">
+      <img src="https://via.placeholder.com/400x250" alt="Projet 1">
+      <div class="overlay"><h3>Projet 1</h3></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image-container">
+      <img src="https://via.placeholder.com/400x250" alt="Projet 2">
+      <div class="overlay"><h3>Projet 2</h3></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image-container">
+      <img src="https://via.placeholder.com/400x250" alt="Projet 3">
+      <div class="overlay"><h3>Projet 3</h3></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image-container">
+      <img src="https://via.placeholder.com/400x250" alt="Projet 4">
+      <div class="overlay"><h3>Projet 4</h3></div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/400x250" alt="Projet 2">
+      <div class="content">
+        <h3>Titre du projet 2</h3>
+        <p>Autre projet dynamique réalisé par l'équipe Multyde.</p>
       </div>
     </div>
-  </nav>
-
-  <section id="accueil" class="fullscreen-section" style="background:#000;">
-  <h1>Bienvenue chez Multyde</h1>
-</section>
-
-<section class="fullscreen-section" style="background:#000;">
-  <div style="max-width: 700px; text-align: center;">
-    <h2 style="font-size: 1.5rem; color: #aaa; margin-bottom: 1rem;">Une agence jeune, fraîche et drôle</h2>
-    <p style="font-size: 1.1rem; line-height: 1.6; color: #ccc;">
-      Multyde est une agence de communication audiovisuelle spécialisée dans la création de contenus percutants et créatifs. 
-      Notre équipe met tout son savoir-faire pour donner vie à vos idées à travers des vidéos, des visuels, et des campagnes originales.
-    </p>
-  </div>
-</section>
-
-  <section id="projects" class="fullscreen-section projects parallax" style="background-image: url('https://via.placeholder.com/1920x1080');">
-    <div style="position: relative; width: 100%; overflow: hidden;">
-    <div style="display: flex; gap: 2rem; animation: scrollCards 30s linear infinite; width: max-content;">
-      <div style="min-width: 250px; background: #222; padding: 1rem; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
-        <img src="https://via.placeholder.com/250x150" alt="Projet 1" style="width: 100%; border-radius: 8px;">
-        <p style="margin-top: 1rem; font-size: 1rem;">Titre du projet 1 - Un projet marquant</p>
-      </div>
-      <div style="min-width: 250px; background: #222; padding: 1rem; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
-        <img src="https://via.placeholder.com/250x150" alt="Projet 2" style="width: 100%; border-radius: 8px;">
-        <p style="margin-top: 1rem; font-size: 1rem;">Titre du projet 2 - Créatif et audacieux</p>
-      </div>
-      <div style="min-width: 250px; background: #222; padding: 1rem; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
-        <img src="https://via.placeholder.com/250x150" alt="Projet 3" style="width: 100%; border-radius: 8px;">
-        <p style="margin-top: 1rem; font-size: 1rem;">Titre du projet 3 - Impact visuel garanti</p>
-      </div>
-      <div style="min-width: 250px; background: #222; padding: 1rem; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
-        <img src="https://via.placeholder.com/250x150" alt="Projet 4" style="width: 100%; border-radius: 8px;">
-        <p style="margin-top: 1rem; font-size: 1rem;">Titre du projet 4 - Dynamisme créatif</p>
+    <div class="card">
+      <img src="https://via.placeholder.com/400x250" alt="Projet 3">
+      <div class="content">
+        <h3>Titre du projet 3</h3>
+        <p>Un projet marquant et créatif.</p>
       </div>
     </div>
   </div>
-  <style>
-    @keyframes scrollCards {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-  </style>
-</section>
-
-  <section id="team" class="fullscreen-section team parallax" style="background-image: url('https://via.placeholder.com/1920x1080');">
-  <a href="#" style="display: block; text-align: center; text-decoration: none;">
-    <div style="width: 220px; height: 220px; margin: auto; border-radius: 50%; background: url('https://via.placeholder.com/220') center/cover no-repeat; border: 4px solid #fff; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-    </div>
-    <p style="margin-top: 1rem; font-size: 1.2rem; font-weight: bold; color: #fff;">L'équipe Multyde</p>
-  </a>
-</section>
-
-  <section id="studio" class="fullscreen-section studio">
-    <h2>Notre studio</h2>
-  </section>
-
-  <section id="mariages" class="fullscreen-section mariages">
-    <h2>Nos mariages</h2>
-  </section>
-
-  <section id="blog" class="fullscreen-section contact">
-    <h2>Le blog</h2>
-  </section>
-
-  <script>
-    document.querySelector('.menu-toggle')?.addEventListener('click', () => {
-      document.querySelector('.menu')?.classList.add('active');
-    });
-
-    document.querySelector('.close-btn')?.addEventListener('click', () => {
-      document.querySelector('.menu')?.classList.remove('active');
-    });
-  </script>
-  <footer style="background: #000; border-top: 1px solid #333; padding: 3rem 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;">
-    <div style="flex: 1; min-width: 200px; margin-bottom: 1.5rem;">
-      <img src="logo.png" alt="Logo Multyde" style="height: 40px; margin-bottom: 1rem;">
-      <p style="color: #aaa; font-size: 0.9rem;">© 2025 Multyde — Tous droits réservés</p>
-    </div>
-    <div style="flex: 2; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: flex-end;">
-      <div>
-        <h4 style="margin-bottom: 0.5rem; font-size: 1rem;">Navigation</h4>
-        <a href="#accueil" style="display: block; color: #aaa; text-decoration: none; font-size: 0.9rem;">Accueil</a>
-        <a href="#projects" style="display: block; color: #aaa; text-decoration: none; font-size: 0.9rem;">Projets</a>
-        <a href="#studio" style="display: block; color: #aaa; text-decoration: none; font-size: 0.9rem;">Studio</a>
-      </div>
-      <div>
-        <h4 style="margin-bottom: 0.5rem; font-size: 1rem;">Entreprise</h4>
-        <a href="#team" style="display: block; color: #aaa; text-decoration: none; font-size: 0.9rem;">Équipe</a>
-        <a href="#mariages" style="display: block; color: #aaa; text-decoration: none; font-size: 0.9rem;">Mariages</a>
-        <a href="#blog" style="display: block; color: #aaa; text-decoration: none; font-size: 0.9rem;">Blog</a>
-      </div>
-    </div>
-  </footer>
 </body>
 </html>
