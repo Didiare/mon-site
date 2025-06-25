@@ -8,13 +8,24 @@
 </head>
 <body class="bg-white text-gray-900 font-sans">
   <div id="header-container"></div>
-  <script>
-    fetch("header.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("header-container").innerHTML = data;
+ <div id="header-container"></div>
+
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header-container").innerHTML = data;
+
+      // Active le menu une fois le header chargé
+      document.querySelector('.menu-toggle')?.addEventListener("click", () => {
+        document.querySelector('.menu').classList.add('active');
       });
-  </script>
+
+      document.querySelector('.menu .close-btn')?.addEventListener("click", () => {
+        document.querySelector('.menu').classList.remove('active');
+      });
+    });
+</script>
   <section class="py-20 px-6 max-w-7xl mx-auto">
     <h1 class="text-4xl md:text-5xl font-extrabold mb-10 text-center">
       Nos projets
