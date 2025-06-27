@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Projet Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER dynamique -->
+  <div id="header-container"></div>
+
+  <main style="padding-top: 100px; max-width: 1000px; margin: auto; padding: 2rem;">
+    <h1 style="margin-bottom: 2rem;">Projet Studio</h1>
+
+    <!-- Galerie photos -->
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+      <img src="images/studio1.jpg" alt="Photo 1" style="width: 100%; max-width: 48%; border-radius: 1rem;">
+      <img src="images/studio2.jpg" alt="Photo 2" style="width: 100%; max-width: 48%; border-radius: 1rem;">
+    </div>
+
+    <!-- Description -->
+    <p style="margin-top: 2rem;">
+      Ce shooting studio a été réalisé pour une marque de vêtements. L'objectif : retranscrire l’univers moderne et épuré du client avec des lumières douces et une ambiance chaleureuse.
+    </p>
+
+    <!-- Bouton retour -->
+    <div style="margin-top: 2rem;">
+      <a href="projets.html" style="color: #91736b; text-decoration: underline;">← Retour aux projets</a>
+    </div>
+  </main>
+
+  <!-- JS pour le menu -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      fetch("header.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("header-container").innerHTML = data;
+
+          const toggle = document.querySelector('.menu-toggle');
+          const menu = document.querySelector('.menu');
+          const closeBtn = document.querySelector('.menu .close-btn');
+
+          toggle?.addEventListener("click", () => menu.classList.add("active"));
+          closeBtn?.addEventListener("click", () => menu.classList.remove("active"));
+        });
+    });
+  </script>
+
+</body>
+</html>
