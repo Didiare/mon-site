@@ -88,18 +88,41 @@
   </section>
 
 <section id="team" style="position: relative; height: 100vh; overflow: hidden;">
-  <!-- Contenu équipe -->
-  <div style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
-    <div style="width: 250px; height: 250px; border-radius: 50%; overflow: hidden; position: relative; transition: transform 0.3s ease;">
-      <img src="images/photo-equipe.jpg"
-           alt="Équipe Multyde"
-           style="width: 100%; height: 100%; object-fit: cover;">
-      <div style="position: absolute; bottom: 10px; width: 100%; text-align: center;">
-        <a href="equipe.html" style="display: inline-block; padding: 0.5rem 1rem; background: #fff; color: #000; font-weight: bold; border-radius: 999px; text-decoration: none; transition: background 0.3s;">
+  <!-- Vidéo de fond YouTube -->
+  <iframe
+    src="https://www.youtube.com/embed/MB4Xh3_nYfo?autoplay=1&mute=1&controls=0&loop=1&playlist=MB4Xh3_nYfo&modestbranding=1&showinfo=0"
+    frameborder="0"
+    allow="autoplay; fullscreen"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; pointer-events: none;">
+  </iframe>
+
+  <!-- Contenu cliquable -->
+  <div style="position: relative; z-index: 2; display: flex; justify-content: center; align-items: center; height: 100%;">
+    <a href="equipe.html" style="text-decoration: none;">
+      <div style="
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        transition: transform 0.4s ease;
+      " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="images/photo-equipe.jpg" alt="Équipe Multyde" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          color: white;
+          font-weight: bold;
+          padding: 0.5rem;
+          text-align: center;
+        ">
           Voir l’équipe →
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
