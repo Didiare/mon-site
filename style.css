@@ -256,6 +256,23 @@
     background-size: cover;
   }
 
+.team-button {
+  margin-top: 1.5rem;
+  background-color: #91736b;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.team-button:hover {
+  background-color: #7d5f54;
+  transform: scale(1.05);
+}
+
   footer {
     background: #000;
     border-top: 1px solid #333;
