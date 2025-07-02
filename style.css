@@ -211,6 +211,15 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
+#projects a:hover div {
+  opacity: 1;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
   .parallax {
     background-attachment: fixed;
     background-position: center;
