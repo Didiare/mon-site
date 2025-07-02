@@ -256,6 +256,51 @@
     background-size: cover;
   }
 
+.team-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-photo {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.team-photo .overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.team-photo:hover .overlay-text {
+  opacity: 1;
+}
+
 .team-button {
   margin-top: 1.5rem;
   background-color: #91736b;
