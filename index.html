@@ -38,10 +38,10 @@
   </nav>
 
   <section id="accueil">
-    <iframe src="https://player.vimeo.com/video/886475509?background=1&autoplay=1&loop=1&muted=1"
+    <iframe id="vimeo-background"
   frameborder="0"
   allow="autoplay; fullscreen"
-  style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; object-fit:  cover;">
+  style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover;">
 </iframe>
     <div class="overlay">
       <h1>Bienvenue chez Multyde</h1>
@@ -106,6 +106,27 @@
       document.querySelector('.menu')?.classList.add('active');
     });
   </script>
+  <script>
+  const vimeoVideos = [
+    '313361018', // NO REDEMPTION / US TOUR 2017
+    '318832132', // NO REDEMPTION / ULTRA MIAMI 2018
+    '886475509'  // RECAP BERCY SCH 2023
+  ];
+
+  // Sélection aléatoire
+  const randomId = vimeoVideos[Math.floor(Math.random() * vimeoVideos.length)];
+
+  // Construction de l'URL
+  const videoUrl = `https://player.vimeo.com/video/${randomId}?background=1&autoplay=1&loop=1&muted=1`;
+
+  // Quand le DOM est prêt, on insère la vidéo
+  document.addEventListener('DOMContentLoaded', () => {
+    const iframe = document.getElementById('vimeo-background');
+    if (iframe) {
+      iframe.src = videoUrl;
+    }
+  });
+</script>
   <script>
   document.addEventListener("DOMContentLoaded", function () {
     const loader = document.getElementById("loader");
